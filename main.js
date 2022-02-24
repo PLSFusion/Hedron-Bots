@@ -3,7 +3,7 @@ const emoji = require('node-emoji');
 const schedule = require('node-schedule');
 const TelegramBot = require('node-telegram-bot-api');
 
-const { hdrnAddr, hdrnABI } = require('./abi/hedron');
+const { hedronAddr, hedronABI } = require('./abi/hedron');
 const { infuraProject, telegramApiKey, telegramChatId} = require('./secrets');
 
 const provider = {
@@ -16,7 +16,7 @@ const provider = {
 const telegramBot = new TelegramBot(telegramApiKey);
 
 const hedron = {
-  ethereum: new ethers.Contract(hdrnAddr.ethereum, hdrnABI, provider.ethereum)
+  ethereum: new ethers.Contract(hedronAddr.ethereum, hedronABI, provider.ethereum)
 };
 
 let claimCount = 0;
